@@ -1,0 +1,92 @@
+@import '../settings/color-variables'; // Adjust path if needed
+
+.main-card {
+  position: relative;
+  transition: all 0.3s ease;
+
+  &--menu-collapsed {
+    margin-left: 60px; // Adjust margin when sidebar is collapsed
+  }
+
+  &--full {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    width: 100vw !important;
+    height: 100vh !important;
+  }
+
+  &--loading {
+    opacity: 0.7;
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__title {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  &__options {
+    .card-option {
+      .btn-icon {
+        padding: 0;
+        color: $primary-color;
+        &:hover {
+          color: darken($primary-color, 10%);
+        }
+      }
+
+      &__menu {
+        min-width: 120px;
+      }
+
+      &__item {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 12px;
+
+        i {
+          font-size: 14px;
+        }
+
+        a {
+          color: #333;
+          text-decoration: none;
+          &:hover {
+            color: $primary-color;
+          }
+        }
+      }
+    }
+  }
+
+  &__body {
+    padding: 20px;
+  }
+
+  &__loader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    // Override Spinner's default fixed positioning
+    > div {
+      position: static;
+      right: auto;
+      top: auto;
+    }
+  }
+}
