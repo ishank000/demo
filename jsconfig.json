@@ -10,14 +10,22 @@
     "strict": true,
     "forceConsistentCasingInFileNames": true,
     "module": "ESNext",
-    "moduleResolution": "Bundler",
+    "moduleResolution": "Node",
+    "composite": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
     "baseUrl": "src"
   },
-  "exclude": ["node_modules", "vite.config.mjs"], // Exclude vite.config.mts
-  "include": ["src", "**/*.js", "**/*.jsx", "src/**/*"],
-  "references": [{ "path": "./jsconfig.node.json" }]
+  "include": [
+    "src",
+    "**/*.js",
+    "**/*.jsx",
+    "vite.config.mjs"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }
+   
