@@ -1,8 +1,8 @@
 import { defineConfig, loadEnv } from 'vite';
 import react from '@vitejs/plugin-react';
 import tsconfigPaths from 'vite-tsconfig-paths';
-
 import path from 'path';
+
 const resolvePath = (str) => path.resolve(__dirname, str);
 
 export default defineConfig(({ mode }) => {
@@ -12,44 +12,34 @@ export default defineConfig(({ mode }) => {
 
   return {
     server: {
-      // this ensures that the browser opens upon server start
       open: true,
-      // this sets a default port to 3000
       port: PORT,
-      host: true
+      host: true,
     },
     preview: {
       open: true,
-      host: true
+      host: true,
     },
     define: {
-      global: 'window'
+      global: 'window',
     },
     resolve: {
       alias: [
-        // { find: '', replacement: path.resolve(__dirname, 'src') },
-        // {
-        //   find: /^~(.+)/,
-        //   replacement: path.join(process.cwd(), 'node_modules/$1')
-        // },
-        // {
-        //   find: /^src(.+)/,
-        //   replacement: path.join(process.cwd(), 'src/$1')
-        // }
-        // {
-        //   find: 'assets',
-        //   replacement: path.join(process.cwd(), 'src/assets')
-        // },
-      ]
+        { find: 'components', replacement: path.resolve(__dirname, 'src/components') },
+        { find: 'views', replacement: path.resolve(__dirname, 'src/views') },
+        // Add more aliases below if needed:
+        // { find: 'hooks', replacement: path.resolve(__dirname, 'src/hooks') },
+        // { find: 'utils', replacement: path.resolve(__dirname, 'src/utils') },
+      ],
     },
     css: {
       preprocessorOptions: {
         scss: {
-          charset: false
+          charset: false,
         },
         less: {
-          charset: false
-        }
+          charset: false,
+        },
       },
       charset: false,
       postcss: {
@@ -61,22 +51,22 @@ export default defineConfig(({ mode }) => {
                 if (atRule.name === 'charset') {
                   atRule.remove();
                 }
-              }
-            }
-          }
-        ]
-      }
+              },
+            },
+          },
+        ],
+      },
     },
     build: {
       chunkSizeWarningLimit: 1600,
       rollupOptions: {
         input: {
           main: resolvePath('index.html'),
-          legacy: resolvePath('index.html')
-        }
-      }
+          legacy: resolvePath('index.html'),
+        },
+      },
     },
     base: API_URL,
-    plugins: [react(), tsconfigPaths()]
+    plugins: [react(), tsconfigPaths()],
   };
 });

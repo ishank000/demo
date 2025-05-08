@@ -3,6 +3,7 @@
   "version": "3.0.0",
   "private": true,
   "dependencies": {
+    "@popperjs/core": "^2.11.6",
     "@tanem/react-nprogress": "^5.0.53",
     "@vitejs/plugin-react": "^4.3.4",
     "apexcharts": "^4.3.0",
@@ -25,6 +26,28 @@
     "web-vitals": "^4.2.3",
     "yup": "^1.4.0"
   },
+  "devDependencies": {
+    "@eslint/compat": "^1.2.3",
+    "@eslint/eslintrc": "^3.2.0",
+    "@eslint/js": "^9.15.0",
+    "env-cmd": "^10.1.0",
+    "eslint": "^9.15.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-jsx-a11y": "^6.10.2",
+    "eslint-plugin-prettier": "^5.2.1",
+    "@types/node": "^18.0.0",
+    "@types/react": "^18.0.0",
+    "typescript": "^4.7.4",
+    "eslint-plugin-react": "^7.37.2",
+    "eslint-plugin-react-hooks": "^5.0.0",
+    "knip": "^5.30.6",
+    "prettier": "^3.4.1",
+    "sass": "1.77.6"
+  },
+  "overrides": {
+    "autoprefixer": "10.4.5"
+  },
   "scripts": {
     "start": "vite",
     "build": "vite build",
@@ -33,9 +56,6 @@
     "lint:fix": "eslint --fix \"src/**/*.{js,jsx,ts,tsx}\"",
     "prettier": "prettier --write \"src/**/*.{js,jsx,ts,tsx}\"",
     "knip": "knip"
-  },
-  "overrides": {
-    "autoprefixer": "10.4.5"
   },
   "eslintConfig": {
     "extends": [
@@ -54,22 +74,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "@eslint/compat": "^1.2.3",
-    "@eslint/eslintrc": "^3.2.0",
-    "@eslint/js": "^9.15.0",
-    "env-cmd": "^10.1.0",
-    "eslint": "^9.15.0",
-    "eslint-config-prettier": "^9.1.0",
-    "eslint-plugin-import": "^2.31.0",
-    "eslint-plugin-jsx-a11y": "^6.10.2",
-    "eslint-plugin-prettier": "^5.2.1",
-    "eslint-plugin-react": "^7.37.2",
-    "eslint-plugin-react-hooks": "^5.0.0",
-    "knip": "^5.30.6",
-    "prettier": "^3.4.1",
-    "sass": "1.77.6"
   },
   "packageManager": "yarn@4.6.0"
 }
