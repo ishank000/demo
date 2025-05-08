@@ -1,6 +1,4 @@
-import VerificationCard from 'components/Card/VerificationCard';
-
-// -----------------------|| SAMPLE ||-----------------------//
+import VerificationCard from '../../components/Card/VerficationCard.jsx';
 
 export default function Sample() {
   return (
